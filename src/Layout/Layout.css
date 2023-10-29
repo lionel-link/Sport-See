@@ -1,0 +1,32 @@
+.Layout {
+    width: 884px;
+    position: relative;
+    top: 50px;
+    left: 140px;
+}
+
+.Layout__title {
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+.Layout__subTitle {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.Layout__reportingContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.Layout__reporting {
+    width: 695px;
+    margin-right: 20px;
+}
+
+.Layout__userName {
+    color: #FF0101;
+}
+
+

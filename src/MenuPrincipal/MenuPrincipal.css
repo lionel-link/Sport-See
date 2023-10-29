@@ -1,0 +1,30 @@
+.MenuPrincipal {
+    position: relative;
+    background-color: black;
+    z-index: 1;
+}
+
+.MenuPrincipal__menu {
+    font-size: 24px;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.MenuPrincipal__menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.MenuPrincipal__menuItem {
+    list-style: none;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.MenuPrincipal__menuItem__logo {
+    width: 178px;
+    height: 61px;
+}

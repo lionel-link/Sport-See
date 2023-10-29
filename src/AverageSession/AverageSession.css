@@ -1,0 +1,40 @@
+.AverageSession {
+    background-color: #FF0000;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    position: relative;
+}
+
+.AverageSession__title {
+    font-size: 11px;
+    width: 110px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+g.recharts-layer.recharts-line-dots {
+    display: none;
+}
+
+.AverageSession text.recharts-text.recharts-cartesian-axis-tick-value {
+    padding-top: 5px;
+    fill: white;
+    opacity: 0.7;
+}
+
+.AverageSession__darkerBg {
+    position: absolute;
+    top: 0px;
+    left: 128px;
+    background-color: #000000;
+    width: 63px;
+    height: 263px;
+    z-index: 10000;
+    opacity: 0.0975;
+    border-radius: 0 5px 5px 0;
+}

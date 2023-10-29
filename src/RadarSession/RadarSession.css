@@ -1,0 +1,21 @@
+.RadarSession .radarBg {
+    background-color: #282D30;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+}
+
+.RadarSessiong .recharts-polar-grid-angle {
+    display: none;
+}
+
+.RadarSession text.recharts-text.recharts-polar-angle-axis-tick-value {
+    font-size: 9px;
+}
+
+.RadarSession g.recharts-polar-grid-angle {
+    display: none;
+}
+
+.RadarSession g.recharts-layer.recharts-polar-radius-axis {
+    display: none;
+}

@@ -1,0 +1,13 @@
+.DailyActivity {
+    Width: 595px;
+    background-color: #FBFBFB;
+    box-sizing: border-box;
+}
+
+.DailyActivity__title {
+    position: relative;
+    top: 22px;
+    left: 40px;
+    font-weight: 500;
+    font-size: 15px;
+}

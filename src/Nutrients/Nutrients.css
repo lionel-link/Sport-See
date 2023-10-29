@@ -1,0 +1,35 @@
+.Layout__dataCard {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 124px;
+    background-color: #FBFBFB;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.Layout__dataCard__img {
+    width: 60px;
+    height: 60px;
+}
+
+.Layout__dataCard__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+.Layout__dataCard {
+    margin-bottom: 50px;
+}
+
+.Layout__dataCard__data {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Layout__dataCard__title {
+    color: #74798C;
+    font-size: 14px;
+}
