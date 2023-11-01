@@ -11,3 +11,14 @@
     font-weight: 500;
     font-size: 15px;
 }
+
+.custom-tooltip{
+    font-size: 8px;
+    color: white;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E60000;
+    
+}
+

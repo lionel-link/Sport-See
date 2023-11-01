@@ -6,14 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import Home from './Home/Home'
 
 const router = createBrowserRouter([
-  {path: '/', element:<Home></Home>}
+  {path: '/:id', element:<Home></Home>}
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

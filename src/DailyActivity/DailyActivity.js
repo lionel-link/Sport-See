@@ -35,6 +35,21 @@ function DailyActivity({ activity }) {
     );
   };
 
+
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p className="label">{`${payload[0].value}`} kg</p>
+          <p className="intro">{`${payload[1].value}`} KCal</p>
+          {/* <p className="desc">Anything you want can be displayed here.</p> */}
+        </div>
+      );
+    }
+  
+    return null;
+  };
+
   return (
     <div className="DailyActivity">
       <div className="DailyActivity__title">Activité quotidienne</div>
@@ -52,7 +67,7 @@ function DailyActivity({ activity }) {
         <XAxis dataKey="day" tickLine={false} />
         <YAxis orientation="right" type="number" axisLine={false} tickLine={false} />
         <CartesianGrid vertical={false} />
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />}/>
         <Legend verticalAlign="top" height={80} iconType="circle" iconSize={8} align="right" />
         <Bar barSize={6} dataKey="kilogram" shape={<ThinBarRounded />} fill="#282D30">
           <LabelList dataKey="name" position="insideTop" angle="45" />

@@ -6,7 +6,6 @@ import Score from '../Score/Score';
 import Nutrients from '../Nutrients/Nutrients';
 
 function Layout({ user }) {
-  console.log(user)
   const activity = user.activity;
   const average = user.sessions;
   const score = user.score;
@@ -15,7 +14,7 @@ function Layout({ user }) {
   return (
     <div className="Layout">
       <div className="Layout__title">
-        Bonjour <span className="Layout__userName"> {user.userInfos.lastName}</span>
+        Bonjour <span className="Layout__userName"> {user.userInfos.firstName}</span>
       </div>
       <div className="Layout__subTitle">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
       <div className="Layout__reportingContainer">

@@ -4,25 +4,42 @@ import MenuLateral from './../MenuLateral/MenuLateral';
 import Layout from '../Layout/Layout';
 import DataFromAPI from '../Services/DataFromAPI';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 function Home() {
   const [data, setData] = useState();
-  const API = 'mock';
-
+  const [dataApi, setDataApi] = useState();
+  const [dataMock, setDataMock] = useState();
+  const { id } = useParams();
+  const [error, setError] = useState();
+  const [api, setApi] = useState();
 
   useEffect(() => {
+    const getDataFromMock = async () => {
+      const response = await fetch('/data/data.json');
+      const data = await response.json();
+      let user = data.find((user) => (user.id ==  id));
+      //console.log(user);
+      setDataMock(user);
+      //console.log(dataMock)
+    };
 
-    if (API === 'mock') {
-      const getDataFromMock = async () => {
-        const response = await fetch('/data/data.json');
-        const data = await response.json();
-        setData(data);
-      };
-      getDataFromMock();
-    } else {
-      const getDataFromAPI = async () => {
-        //a "keydata" b "activity" c "average " d "performance"
-        await DataFromAPI().then(([{data: keyData}, {data: activityData}, {data: averageData}, {data: performanceData}]) => {
+    getDataFromMock();
+
+    if (error) {
+      setData(dataMock);
+    } 
+  }, [error]);
+
+  useEffect(() => {
+    setData(dataApi);
+  }, [dataApi]);
+
+  useEffect(() => {
+    const getDataFromAPI = async () => {
+      console.log('ppppp')
+      const res = await DataFromAPI(id)
+        .then(([{ data: keyData }, { data: activityData }, { data: averageData }, { data: performanceData }]) => {
           let performance = {
             performance: [
               {
@@ -52,19 +69,25 @@ function Home() {
             ],
           };
           let activity = { activity: activityData.sessions };
-          // eslint-disable-next-line
+          
           const user = Object.assign({}, keyData, activity, averageData, performance);
-          setData(user);
+          setDataApi(user);
+        })
+        .catch((error) => {
+          return error
         });
-      };
-      getDataFromAPI();
-    }
-    
+      if (res) {
+        //console.log(res)
+        setError(true);
+      }
+      // else{
+      //   setDataApi({name:'leo'})
+      //   console.log(dataApi)
+      // }
+    };
+    //console.log(error)
+    getDataFromAPI();
   }, []);
-
-
-
-  
 
 
 
